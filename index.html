@@ -52,7 +52,10 @@
             padding: 20px;
         }
         .section {
-            margin-bottom: 40px;
+            display: none;
+        }
+        .section.active {
+            display: block;
         }
         .section h2 {
             border-bottom: 2px solid #333;
@@ -91,25 +94,46 @@
             bottom: 0;
             width: 100%;
         }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
-<body>
+<body onload="showSection('about')">
     <header>
         <h1>AMB Nutrition</h1>
         <p>Nutrición y Deporte - Estilo de Vida Saludable</p>
     </header>
     <nav>
-        <a href="#about">Sobre Nosotros</a>
-        <a href="#services">Servicios</a>
-        <a href="#contact">Contacto</a>
+        <a href="#about" onclick="showSection('about')">Sobre Nosotros</a>
+        <a href="#services" onclick="showSection('services')">Servicios</a>
+        <a href="#nutrition" onclick="showSection('nutrition')">Nutrición Clínica</a>
+        <a href="#sport" onclick="showSection('sport')">Nutrición Deportiva</a>
+        <a href="#contact" onclick="showSection('contact')">Contacto</a>
     </nav>
     <div class="hero">
         <h2>Transforma tu Vida con AMB Nutrition</h2>
     </div>
     <div class="container">
-        <div id="about" class="section">
+        <div id="about" class="section active">
             <h2>Sobre Nosotros</h2>
-            <p>Bienvenido a AMB Nutrition, donde combinamos nutrición y deporte para ayudarte a alcanzar un estilo de vida saludable. Nuestra misión es proporcionarte las herramientas y el conocimiento necesario para que puedas lograr tus objetivos de salud y bienestar.</p>
+            <p>Bienvenido a AMB Nutrition, donde combinamos nutrición y deporte para ayudarte a alcanzar un estilo de vida saludable. 
+            Soy Ángel Mejía, fundador de AMB Nutrition. Mi pasión por el fitness y la nutrición me llevó a crear esta plataforma para 
+            compartir mi conocimiento y ayudar a otros a lograr sus objetivos de salud. Con años de experiencia y estudios en el campo, 
+            estoy comprometido a ofrecerte los mejores consejos y servicios personalizados.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Fitness Image">
         </div>
         <div id="services" class="section">
             <h2>Servicios</h2>
@@ -117,31 +141,44 @@
                 <div class="service">
                     <h3>Planes de Nutrición Personalizados</h3>
                     <p>Diseñamos planes de nutrición a medida para satisfacer tus necesidades individuales y ayudarte a alcanzar tus metas de salud.</p>
+                    <img src="https://via.placeholder.com/400x200" alt="Nutrición Personalizada">
                 </div>
                 <div class="service">
                     <h3>Asesoramiento Deportivo</h3>
                     <p>Ofrecemos asesoramiento profesional para mejorar tu rendimiento deportivo y maximizar tus resultados.</p>
+                    <img src="https://via.placeholder.com/400x200" alt="Asesoramiento Deportivo">
                 </div>
                 <div class="service">
                     <h3>Programas de Estilo de Vida Saludable</h3>
                     <p>Te guiamos en la adopción de hábitos saludables que transformarán tu vida y bienestar general.</p>
+                    <img src="https://via.placeholder.com/400x200" alt="Estilo de Vida Saludable">
                 </div>
             </div>
+        </div>
+        <div id="nutrition" class="section">
+            <h2>Nutrición Clínica</h2>
+            <p>En AMB Nutrition, ofrecemos servicios de nutrición clínica para tratar una variedad de patologías. Nuestro equipo de expertos trabaja contigo para desarrollar un plan de nutrición personalizado que aborde tus necesidades específicas.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Nutrición Clínica">
+        </div>
+        <div id="sport" class="section">
+            <h2>Nutrición Deportiva</h2>
+            <p>Nuestros programas de nutrición deportiva están diseñados para optimizar el rendimiento de los atletas. Ya sea que estés entrenando para una competencia o simplemente quieras mejorar tu condición física, te ayudamos a alcanzar tus objetivos con planes nutricionales específicos.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Nutrición Deportiva">
         </div>
         <div id="contact" class="section">
             <h2>Contacto</h2>
             <div class="contact-info">
                 <div class="contact-detail">
                     <h3>Email</h3>
-                    <p>angelmeblanc@gmail.com</p>
+                    <p><a href="mailto:angelmeblanc@gmail.com">angelmeblanc@gmail.com</a></p>
                 </div>
                 <div class="contact-detail">
                     <h3>Teléfono</h3>
-                    <p>+52 228 857 2748</p>
+                    <p><a href="tel:+522288572748">+52 228 857 2748</a></p>
                 </div>
                 <div class="contact-detail">
-                    <h3>Redes Sociales</h3>
-                    <p>Síguenos en nuestras redes sociales para más consejos y actualizaciones.</p>
+                    <h3>Instagram</h3>
+                    <p><a href="https://www.instagram.com/amb_nutrition_/" target="_blank">AMB Nutrition en Instagram</a></p>
                 </div>
             </div>
         </div>
